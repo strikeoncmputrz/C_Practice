@@ -1,6 +1,5 @@
 //Program for determining tomorrow's date
 #include <stdio.h>
-#include <stdbool.h>
 struct date
 {
 	int month, day, year;
