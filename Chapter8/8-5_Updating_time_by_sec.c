@@ -1,7 +1,6 @@
 // Program to update the Time by One Second
 
 #include <stdio.h>
-#include <stdbool.h>
 
 struct time
 {
