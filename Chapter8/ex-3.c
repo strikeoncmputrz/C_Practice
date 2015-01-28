@@ -14,32 +14,32 @@ struct time elapsed_time (struct time fT, struct time sT)
 	
 	if(sT.sec >= fT.sec)	//diff sec
 	{
-		eT.sec = sT.sec - fT.sec;
+		eT.sec = sT.sec - eT.sec;
 	}else 
 	{
-		--sT.min;
-		sT.sec = sT.sec + 60;
+		--fT.min;
+		fT.sec = fT.sec + 60;
 		eT.sec = sT.sec - fT.sec;
+
 	}
 
 	if(sT.min >= fT.min)	//diff minutes
 	{
-		eT.min = sT.min - fT.min;
+		eT.min = sT.min - eT.min;
 	}else 
 	{
 		--sT.hour;
-		sT.min = sT.min + 60;
+		fT.min = fT.min + 60;
 		eT.min = sT.min - fT.min;
 
 	}
-
 	if(fT.hour > sT.hour)
 	{
-		sT.hour = sT.hour + 24;
+		sT.hour = sT.hour + 12;
 		eT.hour = sT.hour - fT.hour;
 	}else
 	{
-		eT.hour = sT.hour - fT.hour; 
+		eT.hour = sT.hour - sT.hour; 
 	
 	}
 	
@@ -53,18 +53,22 @@ struct time elapsed_time (struct time fT, struct time sT)
 int main (void)
 {
 	struct time eTime, firstT, lastT;
+	//int fT, sT, days_between;
+
 
 	printf("Program to calculate the elapsed time between two times.\n");
 	printf("Please type earlier time (hh:mm:ss) \n");
-	scanf("%i:%i:%i", &firstT.hour, &firstT.min, &firstT.sec);
+	scanf("%i %i %i", &firstT.hour, &firstT.min, &firstT.sec);
 	printf("Hour = %i Min = %i Sec = %i\n", firstT.hour, firstT.min, firstT.sec);
 	printf("Please type in the later time (hh:mm:ss) \n");
-	scanf("%i:%i:%i", &lastT.hour, &lastT.min, &lastT.sec);	
+	scanf("%i %i %i", &lastT.hour, &lastT.min, &lastT.sec);	
 	printf("Hour = %i Min = %i Sec = %i\n", lastT.hour, lastT.min, lastT.sec);
 	
 	eTime = elapsed_time(firstT, lastT);
+
+
 	
-	printf("%i hours %i minutes and %i seconds have elapsed.\n", eTime.hour, eTime.min, eTime.sec);
+	printf("There are %i hours %i minutes and %i seconds have elapsed.\n" eT.hour, eT.min, eT.sec);
 
 	return 0;
 
