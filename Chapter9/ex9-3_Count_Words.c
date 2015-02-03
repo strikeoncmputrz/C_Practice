@@ -41,12 +41,13 @@ int main (void)
 	const char text1[] = "Well, here goes.";
 	const char text2[] = "And here we go... again.";
 	const char text3[] = "And here'd we go... again.";
+	const char text4[] = "And here'd we go... .-255";
 	//const char text2[] = "And here we go... again.";
 	int countWords(const char stringp[]);
 
 	printf("%s - words = %i\n", text1, countWords(text1));
 	printf("%s - words = %i\n", text2, countWords(text2));
-	printf("%s - words = %i\n", text3, countWords(text3));
+	printf("%s - words = %i\n", text4, countWords(text4));
 
 	return 0;
 }
