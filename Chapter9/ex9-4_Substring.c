@@ -7,9 +7,10 @@ void subString(const char source[], int start, int count, char result[])
 {
 	int length = stringLength(source);
 	int i;
-	printf("%i\n", count);
-	count = length%count;
-	printf("%i\n", count);
+	//printf("%i\n", count);
+	if(start + count > length)
+		count = length%count;
+	//printf("%i\n", count);
 	//Cycle through source from start to start + count -1
 	for(i = 0; i < count; ++i)
 	{
@@ -37,8 +38,8 @@ int main (void)
 //	int stringLength(const char string[]);
 	void subString(const char source[], int start, int count, char result[]);
 	char result[50];
-	//subString("character", 4, 3, result);
-	//printf("%s\n", result);
+	subString("character", 4, 3, result);
+	printf("%s\n", result);
 	subString("two words", 4, 200, result);
 	printf("%s\n", result);
 
