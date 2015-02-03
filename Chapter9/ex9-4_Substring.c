@@ -10,15 +10,14 @@ void subString(const char source[], int start, int count, char result[])
 	//printf("%i\n", count);
 	if(start + count > length)
 		count = length%count;
-	//printf("%i\n", count);
+//	printf("%i\n", count);
 	//Cycle through source from start to start + count -1
 	for(i = 0; i < count; ++i)
 	{
 		result[i] = source[start];
 		++start;
 	}
-	result[i+1] = '\0';
-
+	result[count] = '\0';
 
 }
 
