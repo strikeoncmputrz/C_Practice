@@ -50,6 +50,7 @@ void concat(char result[], const char str1[], const char str2[])
 	result[i+j] = '\0';
 }
 
+//Removes a specifed number of characters from a char array
 void removeString(char rSource[], int start, int count)
 {
 	int i, j = 0;
