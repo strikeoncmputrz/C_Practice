@@ -75,13 +75,11 @@ void insertString(char rSource[], char ins[], int start)
 	for(i=0; first[i] != '\0'; ++i)
 	{
 		rSource[i] = first[i];
-		printf("rSource[i] = %c first\n", rSource[i]);
 	}
 	//Insert new string
 	for(j = 0; ins[j] != '\0'; ++j)
 	{
 		rSource[i+j] = ins[j];
-		printf("rSource[i + j] = %c ins\n", rSource[i+j]);
 	}
 	//copy second to rSource after new insertion
 	for(k=0; second[k] != '\0'; ++k)
