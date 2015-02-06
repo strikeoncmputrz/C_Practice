@@ -1,4 +1,4 @@
-//Program to return a pointer from a function
+//This Program Demonstrates Ruturning a Pointer from a Function
 
 #include <stdio.h>
 
@@ -8,21 +8,17 @@ struct entry
 	struct entry *next;
 };
 
-struct entry *findEntry(struct entry *listPtr, int match)
+struct entry *findEntry (struct entry *listPtr, int match)
 {
-	while( listPtr != (struct entry *) 0)
-	{
+	while(listPtr != (struct entry *) 0)
 		if(listPtr->value == match)
 			return (listPtr);
 		else
 			listPtr = listPtr->next;
-	}
-		return (struct entry *) 0;
-
-	
+	return (struct entry *) 0;
 }
 
-int main(void)
+int main (void)
 {
 	struct entry *findEntry(struct entry *listPtr, int match);
 	struct entry n1,n2,n3;
@@ -32,14 +28,12 @@ int main(void)
 
 	n1.value = 100;
 	n1.next = &n2;
-
 	n2.value = 200;
 	n2.next = &n3;
-
 	n3.value = 300;
 	n3.next = 0;
 
-	printf("Enter value to locate: ");
+	printf("Enter the value to locate: \n");
 	scanf("%i", &search);
 
 	listPtr = findEntry(listStart, search);
@@ -47,7 +41,7 @@ int main(void)
 	if(listPtr != (struct entry *) 0)
 		printf("Found %i.\n", listPtr->value);
 	else
-		printf("Not found.\n");
-	return 0;
+		printf("Not Found.\n");
 
+	return 0;
 }
