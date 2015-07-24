@@ -1,4 +1,4 @@
-//Program to travers a linked list
+//Program to traverse a linked list
 
 #include <stdio.h>
 
