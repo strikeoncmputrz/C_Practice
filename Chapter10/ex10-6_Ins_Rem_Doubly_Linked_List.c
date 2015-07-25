@@ -8,19 +8,21 @@ struct entry
 	struct entry *prev;
 };
 
-/*
+
 //Function to insert an entry into a linked list after an entry
 void insertEntry(struct entry *insert, struct  entry *list_spot)
 {
-	//New struct points to list_spot's next struct
-	insert->next = list_spot->next;
-	//List_spot struct's next now points to inserted struct
-	list_spot->next = insert;
+	
+	insert->prev = list_spot->prev;  //New struct points to list_spot's prev struct
+	
+	insert->next = list_spot->next;  //New struct points to list_spot's next entry
+	
+	list_spot->next = insert; //List_spot struct's next now points to inserted struct
 }
-*/
+
 
 //Function that removes a link after the link passed as arg as long as it is not the last link
-/*void removeEntry(struct entry *entry_ptr)
+void removeEntry(struct entry *entry_ptr)
 {
 	if(entry_ptr->next != (struct entry *) 0)
 	{
@@ -28,7 +30,7 @@ void insertEntry(struct entry *insert, struct  entry *list_spot)
 		entry_ptr->next = nxt;
 	}
 
-}*/
+}
 
 int main (void)
 {

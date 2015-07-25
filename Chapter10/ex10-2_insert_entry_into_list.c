@@ -32,7 +32,7 @@ int main (void)
 	
 	//Struct to be inserted into list
 	insert.value = 500;
-	insert.next = '\0';
+	insert.next = (struct entry *) 0;
 
 	//Build list
 	n1.value = 100;
@@ -43,7 +43,7 @@ int main (void)
 	n3.next = (struct entry *) 0; //mark list end with null pointer
 
 
-	insertEntry(&insert, &n2);
+	insertEntry(&insert, &n1);
 	
 	while(list_pointer != (struct entry *) 0)
 	{

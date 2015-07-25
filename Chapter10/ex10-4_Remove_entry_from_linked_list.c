@@ -1,4 +1,4 @@
-//Program to insert an entry into a linked list after an entry
+//Program to remove an entry from a linked list after an entry or the front
 
 #include <stdio.h>
 
@@ -9,7 +9,7 @@ struct entry
 	struct entry *next;
 };
 
-
+/*
 //Function to insert an entry into a linked list after an entry
 void insertEntry(struct entry *insert, struct  entry *list_spot)
 {
@@ -18,7 +18,18 @@ void insertEntry(struct entry *insert, struct  entry *list_spot)
 	//List_spot struct's next now points to inserted struct
 	list_spot->next = insert;
 }
+*/
 
+//Function that removes a link after the link passed as arg as long as it is not the last link
+void removeEntry(struct entry *entry_ptr)
+{
+	if(entry_ptr->next != (struct entry *) 0)
+	{
+		struct entry *nxt = (entry_ptr->next)->next;
+		entry_ptr->next = nxt;
+	}
+
+}
 
 int main (void)
 {
@@ -28,13 +39,14 @@ int main (void)
 	struct entry front;
 	struct entry *list_pointer;
 	
-	//Declare function
-	void insertEntry(struct entry *ins, struct entry *lspot);
+	//Declare function removeEntry
+	void removeEntry(struct entry *remove_next);
 	
-	//Struct to be inserted into list
+	/*//Struct to be inserted into list
 	insert.value = 500;
 	insert.next = (struct entry *) 0;
-
+	*/
+	
 	//Build list
 	n1.value = 100;
 	n1.next = &n2;
@@ -48,7 +60,7 @@ int main (void)
 	front.next = &n1;
 
 	
-	insertEntry(&insert, &n2);
+	removeEntry(&n3);
 	
 	//Set list pointer to front of list
 	list_pointer = front.next;
