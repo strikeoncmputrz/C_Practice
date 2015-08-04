@@ -4,7 +4,9 @@
 int main (void)
 {
 	unsigned int w1 = 0xabcdef00u, w2 = 0xffff1122u;
+	int int_size();
 	unsigned int rotate (unsigned int value, int n);
+
 
 	printf("%x\n", rotate(w1, 8));
 	printf("%x\n", rotate(w1, -16));
@@ -15,6 +17,7 @@ int main (void)
 
 	return 0;
 };
+
 //Determines size of int
 int int_size()
 {
@@ -25,28 +28,32 @@ int int_size()
 		count++;
 	return count;
 }
+
 //Function to rotate an unsigned int left or right
 unsigned int rotate(unsigned int value, int n)
 {
 	unsigned int result, bits;
+	
+	//Determine size of n in bits
+	int size = int_size();
 
 	//scale down the shift count to a defined range
 
 	if(n > 0)
-		n = n % 32;
+		n = n % size;
 	else
-		n = -(-n % 32);
+		n = -(-n % size);
 	if(n == 0)
 		result = value;
 	else if (n > 0) //left rotate
 	{
-		bits = value >> (32 - n);
+		bits = value >> (size - n);
 		result = value << n | bits;
 	}
 	else //right rotate
 	{
 		n = -n;
-		bits = value << (32 - n);
+		bits = value << (size - n);
 		result = value >> n | bits;
 	}
 
