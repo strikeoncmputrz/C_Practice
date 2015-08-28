@@ -16,7 +16,7 @@ int main (void)
 {
 	int int_size();
 	int x = int_size();
-	printf("%i \n", x);
+	printf("Regular int size = %i \n", x);
 
 	return 0;
 
