@@ -27,6 +27,8 @@ void bitpat_set(unsigned int *sethere, unsigned int val, int index, int field_si
 	unsigned int mask = (1 << field_size) - 1; 
 	*sethere &= ~(mask << (size - index - field_size)); 
 	printf("Sethere with zero'd out field = %u\n", *sethere);
+	*sethere |= val << (size - index - field_size);
+
 }
 
 
@@ -37,7 +39,7 @@ int main (void)
 	int int_size();
 	void bitpat_set(unsigned int *sethere, unsigned int val, int index, int field_size);
 	int sethere = 32767;
-	bitpat_set(&sethere, 2, 24, 8);
-
+	bitpat_set(&sethere, 55, 16, 8);
+	printf("Sethere with bitstring inserted = %i\n.", sethere);
 
 };
